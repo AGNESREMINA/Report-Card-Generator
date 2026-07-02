@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Card Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card-wrap">
+    <header class="masthead">
+      <span class="masthead__eyebrow">academic record</span>
+      <h1 class="masthead__title">Report Card Generator</h1>
+    </header>
+
+    <form class="entry" id="entryForm">
+      <div class="entry__row">
+        <label class="entry__label" for="nameInput">
+          <span><b>Student Name</b></span>
+          <input type="text" id="nameInput" placeholder="e.g. Priya Raman" required>
+        </label>
+        <label class="entry__label" for="rollInput">
+          <span><b>Roll No.</b></span>
+          <input type="text" id="rollInput" placeholder="e.g. 21CS045" required>
+        </label>
+         <label class="entry__label" for="rollInput">
+          <span><b>Standard</b></span>
+          <input type="text" id="rollInput" placeholder="e.g. 21CS045" required>
+        </label>
+      </div>
+
+      <div class="entry__subjects" id="subjectRows">
+      </div>
+
+      <div class="entry__actions">
+        <button type="button" class="btn btn--ghost" id="addSubject">+ Add Subject</button>
+        <button type="submit" class="btn btn--solid">Generate Report</button>
+      </div>
+    </form>
+
+    <section class="report" id="report" hidden aria-live="polite">
+      <div class="report__head">
+        <h2 id="outName">—</h2>
+        <span id="outRoll">—</span>
+        <span id="outStandard">—</span>
+      </div>
+
+      <table class="report__table" id="outTable">
+        <thead>
+          <tr><th>Subject</th><th>Marks</th><th>Grade</th></tr>
+        </thead>
+        <tbody id="outBody"></tbody>
+      </table>
+
+      <div class="report__summary">
+        <div class="summary__item">
+          <span class="summary__label">Total</span>
+          <span class="summary__value" id="outTotal">—</span>
+        </div>
+        <div class="summary__item">
+          <span class="summary__label">Percentage</span>
+          <span class="summary__value" id="outPercent">—</span>
+        </div>
+        <div class="summary__item summary__item--grade">
+          <span class="summary__label">Overall Grade</span>
+          <span class="summary__value" id="outGrade">—</span>
+        </div>
+      </div>
+
+      <p class="report__remark" id="outRemark"></p>
+    </section>
+
+    <footer class="foot">
+      <span id="statusLine">Ready.</span>
+    </footer>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
